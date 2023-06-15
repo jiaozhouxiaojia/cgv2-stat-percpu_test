@@ -1,0 +1,20 @@
+
+#! /bin/bash
+
+set -x
+
+#DEBHELPER#
+
+lsmod | grep "cgv2_stat_percpu"
+if [ $? -ne 0 ] ;then
+	echo "grep return a none-zero value, not find cgv2_stat_percpu"
+else
+	rmmod cgv2_stat_percpu.ko
+	echo "grep return zero value, find cgv2_stat_percpu"
+fi
+
+if [ -f /etc/modules-load.d/cstat_percpu.conf ] ; then
+	rm /etc/modules-load.d/cstat_percpu.conf
+fi
+
+exit 0

@@ -1,0 +1,10 @@
+Source: cgv2-stat-percpu
+Section: main
+Priority: optional
+Maintainer: veLinux Team <velinux@openvenus.cn>
+Build-Depends: debhelper (>= 9), dkms
+
+Package: cgv2-stat-percpu
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: cgroup v2 per-cpu statistics.
